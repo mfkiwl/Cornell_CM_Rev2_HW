@@ -10,7 +10,7 @@
  * Design ID:                                          R0Bv0001
  * Includes Pre/Post Download Control Register Writes: Yes
  * Created By:                                         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:                                          2021-11-23 09:24:46 GMT-05:00
+ * Timestamp:                                          2021-11-23 10:35:58 GMT-05:00
  *
  * A complete design report corresponding to this export is included at the end 
  * of this header file.
@@ -47,7 +47,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0006, 0x00 },
 	{ 0x0007, 0x00 },
 	{ 0x0008, 0x00 },
-	{ 0x000B, 0x74 },
+	{ 0x000B, 0x68 },
 	{ 0x0016, 0x02 },
 	{ 0x0017, 0xDC },
 	{ 0x0018, 0xFF },
@@ -646,15 +646,15 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Overview
  * ========
  * Part:               Si5395ABCD Rev A
- * Project File:       D:\6089-119_CM_2xVU13P\ClockBuilderPRO\Si5395-RevA-R0Bv0001-Project.slabtimeproj
+ * Project File:       D:\6089-119_CM_2xVU13P\GitHub\Cornell_CM_Rev2_HW\ClockBuilderPRO\Si5395-RevA-R0Bv0001-Project.slabtimeproj
  * Design ID:          R0Bv0001
  * Created By:         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:          2021-11-23 09:24:45 GMT-05:00
+ * Timestamp:          2021-11-23 10:35:57 GMT-05:00
  * 
  * Design Notes
  * ============
  * Synthesizer R0B for Apollo CMv2, 6089-119-RevA, schematic sheet 2.07
- * v0001: Use 48 MHz crystal
+ * v0001: Use 48 MHz crystal for 322.265625 MHz output
  * 
  * Design Rule Check
  * =================
@@ -693,7 +693,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Host Interface:
  *    I/O Power Supply: VDDA (3.3V)
  *    SPI Mode: 4-Wire
- *    I2C Address Range: 116d to 119d / 0x74 to 0x77 (selected via A0/A1 pins)
+ *    I2C Address Range: 104d to 107d / 0x68 to 0x6B (selected via A0/A1 pins)
  * 
  * External Reference:
  *    48 MHz (XTAL - Crystal)
@@ -880,7 +880,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Location      Setting Name                Decimal Value      Hex Value        
  * ------------  --------------------------  -----------------  -----------------
  * 0x0006[23:0]  TOOL_VERSION                0                  0x000000         
- * 0x000B[6:0]   I2C_ADDR                    116                0x74             
+ * 0x000B[6:0]   I2C_ADDR                    104                0x68             
  * 0x0016[1]     LOL_ON_HOLD                 1                  0x1              
  * 0x0017[0]     SYSINCAL_INTR_MSK           0                  0x0              
  * 0x0017[1]     LOSXAXB_INTR_MSK            0                  0x0              
