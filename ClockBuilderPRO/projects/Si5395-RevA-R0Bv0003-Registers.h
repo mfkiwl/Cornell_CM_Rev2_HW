@@ -10,7 +10,7 @@
  * Design ID:                                          R0Bv0003
  * Includes Pre/Post Download Control Register Writes: Yes
  * Created By:                                         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:                                          2021-12-03 09:10:20 GMT-05:00
+ * Timestamp:                                          2021-12-06 17:13:24 GMT-05:00
  *
  * A complete design report corresponding to this export is included at the end 
  * of this header file.
@@ -50,67 +50,67 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x000B, 0x68 },
 	{ 0x0016, 0x02 },
 	{ 0x0017, 0xDC },
-	{ 0x0018, 0xEE },
+	{ 0x0018, 0xFB },
 	{ 0x0019, 0xDD },
 	{ 0x001A, 0xDF },
 	{ 0x002B, 0x02 },
-	{ 0x002C, 0x01 },
+	{ 0x002C, 0x04 },
 	{ 0x002D, 0x00 },
-	{ 0x002E, 0x39 },
+	{ 0x002E, 0x00 },
 	{ 0x002F, 0x00 },
 	{ 0x0030, 0x00 },
 	{ 0x0031, 0x00 },
-	{ 0x0032, 0x00 },
+	{ 0x0032, 0xDF },
 	{ 0x0033, 0x00 },
 	{ 0x0034, 0x00 },
 	{ 0x0035, 0x00 },
-	{ 0x0036, 0x02 },
+	{ 0x0036, 0x00 },
 	{ 0x0037, 0x00 },
 	{ 0x0038, 0x00 },
 	{ 0x0039, 0x00 },
-	{ 0x003A, 0x00 },
+	{ 0x003A, 0x70 },
 	{ 0x003B, 0x00 },
 	{ 0x003C, 0x00 },
 	{ 0x003D, 0x00 },
-	{ 0x003E, 0x10 },
-	{ 0x003F, 0x11 },
+	{ 0x003E, 0x40 },
+	{ 0x003F, 0x00 },
 	{ 0x0040, 0x04 },
-	{ 0x0041, 0x0C },
+	{ 0x0041, 0x00 },
 	{ 0x0042, 0x00 },
-	{ 0x0043, 0x00 },
+	{ 0x0043, 0x0C },
 	{ 0x0044, 0x00 },
 	{ 0x0045, 0x0C },
-	{ 0x0046, 0x32 },
+	{ 0x0046, 0x00 },
 	{ 0x0047, 0x00 },
-	{ 0x0048, 0x00 },
+	{ 0x0048, 0x32 },
 	{ 0x0049, 0x00 },
-	{ 0x004A, 0x32 },
+	{ 0x004A, 0x00 },
 	{ 0x004B, 0x00 },
-	{ 0x004C, 0x00 },
+	{ 0x004C, 0x32 },
 	{ 0x004D, 0x00 },
-	{ 0x004E, 0x05 },
-	{ 0x004F, 0x00 },
-	{ 0x0050, 0x0F },
-	{ 0x0051, 0x03 },
+	{ 0x004E, 0x00 },
+	{ 0x004F, 0x05 },
+	{ 0x0050, 0x0B },
+	{ 0x0051, 0x00 },
 	{ 0x0052, 0x00 },
-	{ 0x0053, 0x00 },
+	{ 0x0053, 0x03 },
 	{ 0x0054, 0x00 },
-	{ 0x0055, 0x03 },
+	{ 0x0055, 0x00 },
 	{ 0x0056, 0x00 },
-	{ 0x0057, 0x00 },
+	{ 0x0057, 0x03 },
 	{ 0x0058, 0x00 },
-	{ 0x0059, 0x01 },
-	{ 0x005A, 0x55 },
-	{ 0x005B, 0x55 },
-	{ 0x005C, 0xD5 },
+	{ 0x0059, 0x10 },
+	{ 0x005A, 0x00 },
+	{ 0x005B, 0x00 },
+	{ 0x005C, 0x00 },
 	{ 0x005D, 0x00 },
 	{ 0x005E, 0x00 },
 	{ 0x005F, 0x00 },
 	{ 0x0060, 0x00 },
 	{ 0x0061, 0x00 },
-	{ 0x0062, 0x00 },
-	{ 0x0063, 0x00 },
-	{ 0x0064, 0x00 },
+	{ 0x0062, 0x55 },
+	{ 0x0063, 0x55 },
+	{ 0x0064, 0xD5 },
 	{ 0x0065, 0x00 },
 	{ 0x0066, 0x00 },
 	{ 0x0067, 0x00 },
@@ -127,7 +127,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x009E, 0x40 },
 	{ 0x00A0, 0x20 },
 	{ 0x00A2, 0x00 },
-	{ 0x00A9, 0xAD },
+	{ 0x00A9, 0x15 },
 	{ 0x00AA, 0x61 },
 	{ 0x00AB, 0x00 },
 	{ 0x00AC, 0x00 },
@@ -190,13 +190,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0141, 0x40 },
 	{ 0x0142, 0xFF },
 	{ 0x0206, 0x00 },
-	{ 0x0208, 0x14 },
+	{ 0x0208, 0x00 },
 	{ 0x0209, 0x00 },
 	{ 0x020A, 0x00 },
 	{ 0x020B, 0x00 },
 	{ 0x020C, 0x00 },
 	{ 0x020D, 0x00 },
-	{ 0x020E, 0x01 },
+	{ 0x020E, 0x00 },
 	{ 0x020F, 0x00 },
 	{ 0x0210, 0x00 },
 	{ 0x0211, 0x00 },
@@ -210,13 +210,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0219, 0x00 },
 	{ 0x021A, 0x00 },
 	{ 0x021B, 0x00 },
-	{ 0x021C, 0x00 },
+	{ 0x021C, 0x7D },
 	{ 0x021D, 0x00 },
 	{ 0x021E, 0x00 },
 	{ 0x021F, 0x00 },
 	{ 0x0220, 0x00 },
 	{ 0x0221, 0x00 },
-	{ 0x0222, 0x00 },
+	{ 0x0222, 0x01 },
 	{ 0x0223, 0x00 },
 	{ 0x0224, 0x00 },
 	{ 0x0225, 0x00 },
@@ -237,13 +237,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0235, 0x00 },
 	{ 0x0236, 0x00 },
 	{ 0x0237, 0x00 },
-	{ 0x0238, 0x00 },
-	{ 0x0239, 0xDC },
-	{ 0x023A, 0x00 },
+	{ 0x0238, 0x70 },
+	{ 0x0239, 0x05 },
+	{ 0x023A, 0x01 },
 	{ 0x023B, 0x00 },
 	{ 0x023C, 0x00 },
 	{ 0x023D, 0x00 },
-	{ 0x023E, 0xC0 },
+	{ 0x023E, 0xF0 },
 	{ 0x0247, 0x00 },
 	{ 0x0248, 0x00 },
 	{ 0x0249, 0x00 },
@@ -296,8 +296,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x028F, 0x00 },
 	{ 0x0290, 0x00 },
 	{ 0x0291, 0x00 },
-	{ 0x0292, 0x3F },
-	{ 0x0293, 0x2F },
+	{ 0x0292, 0x3B },
+	{ 0x0293, 0x2B },
 	{ 0x0294, 0xB0 },
 	{ 0x0296, 0x02 },
 	{ 0x0297, 0x02 },
@@ -313,13 +313,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0302, 0x00 },
 	{ 0x0303, 0x00 },
 	{ 0x0304, 0x00 },
-	{ 0x0305, 0x00 },
-	{ 0x0306, 0x0B },
+	{ 0x0305, 0x57 },
+	{ 0x0306, 0x10 },
 	{ 0x0307, 0x00 },
 	{ 0x0308, 0x00 },
 	{ 0x0309, 0x00 },
 	{ 0x030A, 0x00 },
-	{ 0x030B, 0x80 },
+	{ 0x030B, 0xC8 },
 	{ 0x030C, 0x00 },
 	{ 0x030D, 0x00 },
 	{ 0x030E, 0x00 },
@@ -365,9 +365,9 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0336, 0x00 },
 	{ 0x0337, 0x00 },
 	{ 0x0338, 0x00 },
-	{ 0x0339, 0x1F },
-	{ 0x033B, 0x00 },
-	{ 0x033C, 0x00 },
+	{ 0x0339, 0x1E },
+	{ 0x033B, 0x6A },
+	{ 0x033C, 0x1B },
 	{ 0x033D, 0x00 },
 	{ 0x033E, 0x00 },
 	{ 0x033F, 0x00 },
@@ -407,39 +407,39 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0361, 0x00 },
 	{ 0x0362, 0x00 },
 	{ 0x0487, 0x00 },
-	{ 0x0508, 0x13 },
-	{ 0x0509, 0x22 },
+	{ 0x0508, 0x14 },
+	{ 0x0509, 0x23 },
 	{ 0x050A, 0x0C },
 	{ 0x050B, 0x0B },
-	{ 0x050C, 0x07 },
+	{ 0x050C, 0x1F },
 	{ 0x050D, 0x3F },
-	{ 0x050E, 0x16 },
-	{ 0x050F, 0x2A },
+	{ 0x050E, 0x17 },
+	{ 0x050F, 0x2B },
 	{ 0x0510, 0x09 },
 	{ 0x0511, 0x08 },
-	{ 0x0512, 0x07 },
+	{ 0x0512, 0x1F },
 	{ 0x0513, 0x3F },
 	{ 0x0515, 0x00 },
 	{ 0x0516, 0x00 },
 	{ 0x0517, 0x00 },
 	{ 0x0518, 0x00 },
-	{ 0x0519, 0xC0 },
-	{ 0x051A, 0x02 },
+	{ 0x0519, 0x57 },
+	{ 0x051A, 0x10 },
 	{ 0x051B, 0x00 },
 	{ 0x051C, 0x00 },
 	{ 0x051D, 0x00 },
 	{ 0x051E, 0x00 },
 	{ 0x051F, 0x80 },
 	{ 0x0521, 0x2B },
-	{ 0x052A, 0x01 },
+	{ 0x052A, 0x05 },
 	{ 0x052B, 0x01 },
 	{ 0x052C, 0x87 },
 	{ 0x052D, 0x03 },
 	{ 0x052E, 0x19 },
 	{ 0x052F, 0x19 },
 	{ 0x0531, 0x00 },
-	{ 0x0532, 0x42 },
-	{ 0x0533, 0x03 },
+	{ 0x0532, 0x59 },
+	{ 0x0533, 0x14 },
 	{ 0x0534, 0x00 },
 	{ 0x0535, 0x00 },
 	{ 0x0536, 0x00 },
@@ -451,28 +451,28 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x053C, 0x00 },
 	{ 0x053D, 0x04 },
 	{ 0x053E, 0x02 },
-	{ 0x0588, 0x06 },
-	{ 0x0589, 0x0D },
+	{ 0x0588, 0x09 },
+	{ 0x0589, 0x51 },
 	{ 0x058A, 0x00 },
-	{ 0x058B, 0x6D },
-	{ 0x058C, 0x5D },
+	{ 0x058B, 0xFF },
+	{ 0x058C, 0x09 },
 	{ 0x058D, 0x00 },
 	{ 0x059B, 0x68 },
 	{ 0x059C, 0x8C },
-	{ 0x059D, 0x13 },
-	{ 0x059E, 0x24 },
+	{ 0x059D, 0x14 },
+	{ 0x059E, 0x25 },
 	{ 0x059F, 0x0C },
 	{ 0x05A0, 0x0B },
-	{ 0x05A1, 0x07 },
+	{ 0x05A1, 0x1F },
 	{ 0x05A2, 0x3F },
 	{ 0x05A4, 0x08 },
 	{ 0x05A5, 0x00 },
 	{ 0x05A6, 0x03 },
 	{ 0x05AC, 0x09 },
-	{ 0x05AD, 0x17 },
-	{ 0x05AE, 0x4B },
-	{ 0x05B1, 0x13 },
-	{ 0x05B2, 0x03 },
+	{ 0x05AD, 0x63 },
+	{ 0x05AE, 0x47 },
+	{ 0x05B1, 0xEC },
+	{ 0x05B2, 0x02 },
 	{ 0x0802, 0x35 },
 	{ 0x0803, 0x05 },
 	{ 0x0804, 0x00 },
@@ -571,14 +571,14 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0861, 0x00 },
 	{ 0x090E, 0x02 },
 	{ 0x0943, 0x01 },
-	{ 0x0949, 0x01 },
-	{ 0x094A, 0x01 },
+	{ 0x0949, 0x04 },
+	{ 0x094A, 0x04 },
 	{ 0x094E, 0x49 },
 	{ 0x094F, 0xF2 },
 	{ 0x095E, 0x00 },
 	{ 0x0A02, 0x00 },
 	{ 0x0A03, 0x01 },
-	{ 0x0A04, 0x01 },
+	{ 0x0A04, 0x00 },
 	{ 0x0A05, 0x01 },
 	{ 0x0A14, 0x00 },
 	{ 0x0A1A, 0x00 },
@@ -622,13 +622,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0A5F, 0x00 },
 	{ 0x0B44, 0x2F },
 	{ 0x0B46, 0x00 },
-	{ 0x0B47, 0x0E },
-	{ 0x0B48, 0x0E },
+	{ 0x0B47, 0x0B },
+	{ 0x0B48, 0x0B },
 	{ 0x0B4A, 0x1E },
 	{ 0x0B57, 0x0E },
 	{ 0x0B58, 0x01 },
 	{ 0x0C02, 0x03 },
-	{ 0x0C03, 0x01 },
+	{ 0x0C03, 0x04 },
 	{ 0x0C07, 0x01 },
 	{ 0x0C08, 0x01 },
 	/* End configuration registers */
@@ -648,18 +648,18 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  *
  * Overview
  * ========
- * Part:               Si5395ABCD Rev A
+ * Part:               Si5395AB Rev A
  * Project File:       D:\6089-119_CM_2xVU13P\GitHub\Cornell_CM_Rev2_HW\ClockBuilderPRO\projects\Si5395-RevA-R0Bv0003-Project.slabtimeproj
  * Design ID:          R0Bv0003
  * Created By:         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:          2021-12-03 09:10:20 GMT-05:00
+ * Timestamp:          2021-12-06 17:13:24 GMT-05:00
  * 
  * Design Notes
  * ============
  * Synthesizer R0B for Apollo CMv2, 6089-119-RevA, schematic sheet 2.07
  * v0001: Use 48 MHz crystal for 322.265625 MHz output
  * V0002: Change input to front panel connector on IN_2 at 40 MHz
- * V0003: Use IN0 for 40 MHz input from R0A
+ * V0003: ramp test, use IN2 for 40 MHz input front panel connector
  * 
  * Design Rule Check
  * =================
@@ -672,19 +672,19 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Device Grade
  * ============
  * Maximum Output Frequency: 320 MHz
- * Frequency Synthesis Mode: Integer
- * Frequency Plan Grade:     D
- * Minimum Base OPN:         Si5395D*
+ * Frequency Synthesis Mode: Fractional
+ * Frequency Plan Grade:     B
+ * Minimum Base OPN:         Si5395B*
  * 
  * Base       Output Clock         Supported Frequency Synthesis Modes
  * OPN Grade  Frequency Range      (Typical Jitter)
  * ---------  -------------------  --------------------------------------------
  * Si5395A    100 Hz to 1.028 GHz  Integer (< 100 fs) and fractional (< 150 fs)
- * Si5395B    100 Hz to 350 MHz    "
+ * Si5395B*   100 Hz to 350 MHz    "
  * Si5395C    100 Hz to 1.028 GHz  Integer only (< 100 fs)
- * Si5395D*   100 Hz to 350 MHz    "
+ * Si5395D    100 Hz to 350 MHz    "
  * 
- * * Based on your calculated frequency plan, a Si5395D grade device is
+ * * Based on your calculated frequency plan, a Si5395B grade device is
  * sufficient for your design. For more in-system configuration flexibility
  * (higher frequencies and/or to enable fractional synthesis), consider
  * selecting device grade Si5395A when specifying an ordering part number (OPN)
@@ -701,10 +701,10 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  *    48 MHz (XTAL - Crystal)
  * 
  * Inputs:
- *     IN0: 40 MHz
- *          Standard Differential and Single-ended
+ *     IN0: Unused
  *     IN1: Unused
- *     IN2: Unused
+ *     IN2: 40 MHz
+ *          Standard Differential and Single-ended
  *     IN3: Unused
  * 
  * Outputs:
@@ -732,24 +732,22 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Frequency Plan
  * ==============
- * Priority: OUT8 is lowest jitter output
- * 
- * Fvco = 14.08 GHz
- * Fpfd = 2 MHz
+ * Fvco = 13.3856 GHz
+ * Fpfd = 320 kHz
  * Fms0 = 640 MHz
  * 
  * P dividers:
- *    P0  = 20
+ *    P0  = Unused
  *    P1  = Unused
- *    P2  = Unused
+ *    P2  = 125
  *    P3  = Unused
  *    Pxaxb = 1
  * 
- * MXAXB = 293.3333333333333333... [ 293 + 1/3 ]
- * M = 1408
+ * MXAXB = 278.8666666666666666... [ 278 + 13/15 ]
+ * M = 8366
  * N dividers:
  *    N0:
- *       Value: 22
+ *       Value: 20.915
  *       OUT0: 320 MHz
  *       OUT1: 320 MHz
  *       OUT2: 320 MHz
@@ -784,23 +782,23 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Nominal Bandwidth:
  *   Desired: 100.000 Hz
- *   Actual:  83.620 Hz
+ *   Actual:  125.047 Hz
  *   Coefficients:
- *      BW0:  19
- *      BW1:  34
+ *      BW0:  20
+ *      BW1:  35
  *      BW2:  12
  *      BW3:  11
- *      BW4:  7
+ *      BW4:  31
  *      BW5:  63
  * Fastlock Bandwidth:
  *   Desired: 1.000 kHz
- *   Actual:  669.599 Hz
+ *   Actual:  1.007 kHz
  *   Coefficients:
- *      BW0:  22
- *      BW1:  42
+ *      BW0:  23
+ *      BW1:  43
  *      BW2:  9
  *      BW3:  8
- *      BW4:  7
+ *      BW4:  31
  *      BW5:  63
  * Holdover Bandwidth:
  *    N/A (Ramped Exit from Holdover)
@@ -815,7 +813,83 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * =====================================
  * Mode: FINC/FDEC
  * 
- * N0: DCO Disabled
+ *               Fvco * Nx_DEN       
+ * Fout = ---------------------------
+ *        (Nx_NUM ± n*Nx_FSTEPW) * Rz
+ * 
+ * N0: DCO Enabled
+ * 
+ *    Fvco:               13.3856 GHz
+ *    N0_NUM:             70179094528
+ *    N0_DEN:             3355443200
+ *    N0_FSTEPW:          7018
+ * 
+ *    Desired Step Size:  0.1 ppm
+ *    Actual Step Size:   0.10000130023... ppm
+ *    Range:              14 ppm
+ * 
+ *    OUT0
+ *         R1:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT1
+ *         R2:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT2
+ *         R3:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT3
+ *         R4:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT4
+ *         R5:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT5
+ *         R6:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT6
+ *         R7:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT7
+ *         R8:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
+ * 
+ *    OUT8
+ *         R9:            2
+ *         Initial Freq:  320 MHz
+ *         Step Size:     32.000416073805... Hz
+ *         Min Freq:      319.995552004438... MHz
+ *         Max Freq:      320.004448119219... MHz
  * 
  * N1: DCO Disabled
  * 
@@ -827,7 +901,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Input/Output Skew Control
  * =========================
- * N0: 22
+ * N0: 20.915
  * 
  *    OUT0  320 MHz
  *    OUT1  320 MHz
@@ -864,12 +938,12 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Theta-JA: 18.3 °C/W
  * Airflow:  2 m/s
  * 
- * Total Power: 875 mW, On Chip Power: 821 mW, Tj: 40 °C
+ * Total Power: 898 mW, On Chip Power: 844 mW, Tj: 40 °C
  * 
  *         Frequency  Format   Voltage   Current     Power
  *         ---------  ------  --------  --------  --------
- * VDD                           1.8 V  127.8 mA    230 mW
- * VDDA                          3.3 V  114.8 mA    379 mW
+ * VDD                           1.8 V  138.3 mA    249 mW
+ * VDDA                          3.3 V  116.0 mA    383 mW
  * VDDO0A     Unused                                      
  * VDDO0     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
  * VDDO1     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
@@ -883,7 +957,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * VDDO9      Unused                                      
  * VDDO9A     Unused                                      
  *                                      --------  --------
- *                               Total  390.5 mA    875 mW
+ *                               Total  402.3 mA    898 mW
  * 
  * Note:
  * 
@@ -903,64 +977,64 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0017[0]     SYSINCAL_INTR_MSK           0                  0x0              
  * 0x0017[1]     LOSXAXB_INTR_MSK            0                  0x0              
  * 0x0017[5]     SMB_TMOUT_INTR_MSK          0                  0x0              
- * 0x0018[3:0]   LOS_INTR_MSK                14                 0xE              
- * 0x0018[7:4]   OOF_INTR_MSK                14                 0xE              
+ * 0x0018[3:0]   LOS_INTR_MSK                11                 0xB              
+ * 0x0018[7:4]   OOF_INTR_MSK                15                 0xF              
  * 0x0019[1]     LOL_INTR_MSK                0                  0x0              
  * 0x0019[5]     HOLD_INTR_MSK               0                  0x0              
  * 0x001A[5]     CAL_INTR_MSK                0                  0x0              
  * 0x002B[3]     SPI_3WIRE                   0                  0x0              
  * 0x002B[5]     AUTO_NDIV_UPDATE            0                  0x0              
- * 0x002C[3:0]   LOS_EN                      1                  0x1              
+ * 0x002C[3:0]   LOS_EN                      4                  0x4              
  * 0x002C[4]     LOSXAXB_DIS                 0                  0x0              
  * 0x002D[1:0]   LOS0_VAL_TIME               0                  0x0              
  * 0x002D[3:2]   LOS1_VAL_TIME               0                  0x0              
  * 0x002D[5:4]   LOS2_VAL_TIME               0                  0x0              
  * 0x002D[7:6]   LOS3_VAL_TIME               0                  0x0              
- * 0x002E[15:0]  LOS0_TRG_THR                57                 0x0039           
+ * 0x002E[15:0]  LOS0_TRG_THR                0                  0x0000           
  * 0x0030[15:0]  LOS1_TRG_THR                0                  0x0000           
- * 0x0032[15:0]  LOS2_TRG_THR                0                  0x0000           
+ * 0x0032[15:0]  LOS2_TRG_THR                223                0x00DF           
  * 0x0034[15:0]  LOS3_TRG_THR                0                  0x0000           
- * 0x0036[15:0]  LOS0_CLR_THR                2                  0x0002           
+ * 0x0036[15:0]  LOS0_CLR_THR                0                  0x0000           
  * 0x0038[15:0]  LOS1_CLR_THR                0                  0x0000           
- * 0x003A[15:0]  LOS2_CLR_THR                0                  0x0000           
+ * 0x003A[15:0]  LOS2_CLR_THR                112                0x0070           
  * 0x003C[15:0]  LOS3_CLR_THR                0                  0x0000           
- * 0x003E[7:4]   LOS_MIN_PERIOD_EN           1                  0x1              
- * 0x003F[3:0]   OOF_EN                      1                  0x1              
- * 0x003F[7:4]   FAST_OOF_EN                 1                  0x1              
+ * 0x003E[7:4]   LOS_MIN_PERIOD_EN           4                  0x4              
+ * 0x003F[3:0]   OOF_EN                      0                  0x0              
+ * 0x003F[7:4]   FAST_OOF_EN                 0                  0x0              
  * 0x0040[2:0]   OOF_REF_SEL                 4                  0x4              
- * 0x0041[4:0]   OOF0_DIV_SEL                12                 0x0C             
+ * 0x0041[4:0]   OOF0_DIV_SEL                0                  0x00             
  * 0x0042[4:0]   OOF1_DIV_SEL                0                  0x00             
- * 0x0043[4:0]   OOF2_DIV_SEL                0                  0x00             
+ * 0x0043[4:0]   OOF2_DIV_SEL                12                 0x0C             
  * 0x0044[4:0]   OOF3_DIV_SEL                0                  0x00             
  * 0x0045[4:0]   OOFXO_DIV_SEL               12                 0x0C             
- * 0x0046[7:0]   OOF0_SET_THR                50                 0x32             
+ * 0x0046[7:0]   OOF0_SET_THR                0                  0x00             
  * 0x0047[7:0]   OOF1_SET_THR                0                  0x00             
- * 0x0048[7:0]   OOF2_SET_THR                0                  0x00             
+ * 0x0048[7:0]   OOF2_SET_THR                50                 0x32             
  * 0x0049[7:0]   OOF3_SET_THR                0                  0x00             
- * 0x004A[7:0]   OOF0_CLR_THR                50                 0x32             
+ * 0x004A[7:0]   OOF0_CLR_THR                0                  0x00             
  * 0x004B[7:0]   OOF1_CLR_THR                0                  0x00             
- * 0x004C[7:0]   OOF2_CLR_THR                0                  0x00             
+ * 0x004C[7:0]   OOF2_CLR_THR                50                 0x32             
  * 0x004D[7:0]   OOF3_CLR_THR                0                  0x00             
- * 0x004E[2:0]   OOF0_DETWIN_SEL             5                  0x5              
+ * 0x004E[2:0]   OOF0_DETWIN_SEL             0                  0x0              
  * 0x004E[6:4]   OOF1_DETWIN_SEL             0                  0x0              
- * 0x004F[2:0]   OOF2_DETWIN_SEL             0                  0x0              
+ * 0x004F[2:0]   OOF2_DETWIN_SEL             5                  0x5              
  * 0x004F[6:4]   OOF3_DETWIN_SEL             0                  0x0              
- * 0x0050[3:0]   OOF_ON_LOS                  15                 0xF              
- * 0x0051[3:0]   FAST_OOF0_SET_THR           3                  0x3              
+ * 0x0050[3:0]   OOF_ON_LOS                  11                 0xB              
+ * 0x0051[3:0]   FAST_OOF0_SET_THR           0                  0x0              
  * 0x0052[3:0]   FAST_OOF1_SET_THR           0                  0x0              
- * 0x0053[3:0]   FAST_OOF2_SET_THR           0                  0x0              
+ * 0x0053[3:0]   FAST_OOF2_SET_THR           3                  0x3              
  * 0x0054[3:0]   FAST_OOF3_SET_THR           0                  0x0              
- * 0x0055[3:0]   FAST_OOF0_CLR_THR           3                  0x3              
+ * 0x0055[3:0]   FAST_OOF0_CLR_THR           0                  0x0              
  * 0x0056[3:0]   FAST_OOF1_CLR_THR           0                  0x0              
- * 0x0057[3:0]   FAST_OOF2_CLR_THR           0                  0x0              
+ * 0x0057[3:0]   FAST_OOF2_CLR_THR           3                  0x3              
  * 0x0058[3:0]   FAST_OOF3_CLR_THR           0                  0x0              
- * 0x0059[1:0]   FAST_OOF0_DETWIN_SEL        1                  0x1              
+ * 0x0059[1:0]   FAST_OOF0_DETWIN_SEL        0                  0x0              
  * 0x0059[3:2]   FAST_OOF1_DETWIN_SEL        0                  0x0              
- * 0x0059[5:4]   FAST_OOF2_DETWIN_SEL        0                  0x0              
+ * 0x0059[5:4]   FAST_OOF2_DETWIN_SEL        1                  0x1              
  * 0x0059[7:6]   FAST_OOF3_DETWIN_SEL        0                  0x0              
- * 0x005A[25:0]  OOF0_RATIO_REF              13981013           0x0D55555        
+ * 0x005A[25:0]  OOF0_RATIO_REF              0                  0x0000000        
  * 0x005E[25:0]  OOF1_RATIO_REF              0                  0x0000000        
- * 0x0062[25:0]  OOF2_RATIO_REF              0                  0x0000000        
+ * 0x0062[25:0]  OOF2_RATIO_REF              13981013           0x0D55555        
  * 0x0066[25:0]  OOF3_RATIO_REF              0                  0x0000000        
  * 0x0092[1]     LOL_FST_EN                  1                  0x1              
  * 0x0093[7:4]   LOL_FST_DETWIN_SEL          10                 0xA              
@@ -973,7 +1047,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x009E[7:4]   LOL_SLW_SET_THR             4                  0x4              
  * 0x00A0[7:4]   LOL_SLW_CLR_THR             2                  0x2              
  * 0x00A2[1]     LOL_TIMER_EN                0                  0x0              
- * 0x00A9[28:0]  LOL_CLR_DELAY_DIV256        25005              0x000061AD       
+ * 0x00A9[28:0]  LOL_CLR_DELAY_DIV256        24853              0x00006115       
  * 0x00E5[0]     FASTLOCK_EXTEND_MASTER_DIS  0                  0x0              
  * 0x00E5[5]     FASTLOCK_EXTEND_EN          0                  0x0              
  * 0x00EA[28:0]  FASTLOCK_EXTEND             24586              0x0000600A       
@@ -1142,12 +1216,12 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0142[1]     OUT_DIS_MSK_LOL             1                  0x1              
  * 0x0142[5]     OUT_DIS_MSK_HOLD            1                  0x1              
  * 0x0206[1:0]   PXAXB                       0                  0x0              
- * 0x0208[47:0]  P0_NUM                      20                 0x000000000014   
- * 0x020E[31:0]  P0_DEN                      1                  0x00000001       
+ * 0x0208[47:0]  P0_NUM                      0                  0x000000000000   
+ * 0x020E[31:0]  P0_DEN                      0                  0x00000000       
  * 0x0212[47:0]  P1_NUM                      0                  0x000000000000   
  * 0x0218[31:0]  P1_DEN                      0                  0x00000000       
- * 0x021C[47:0]  P2_NUM                      0                  0x000000000000   
- * 0x0222[31:0]  P2_DEN                      0                  0x00000000       
+ * 0x021C[47:0]  P2_NUM                      125                0x00000000007D   
+ * 0x0222[31:0]  P2_DEN                      1                  0x00000001       
  * 0x0226[47:0]  P3_NUM                      0                  0x000000000000   
  * 0x022C[31:0]  P3_DEN                      0                  0x00000000       
  * 0x0231[3:0]   P0_FRACN_MODE               11                 0xB              
@@ -1158,8 +1232,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0233[4]     P2_FRACN_EN                 0                  0x0              
  * 0x0234[3:0]   P3_FRACN_MODE               11                 0xB              
  * 0x0234[4]     P3_FRACN_EN                 0                  0x0              
- * 0x0235[43:0]  MXAXB_NUM                   944892805120       0x0DC00000000    
- * 0x023B[31:0]  MXAXB_DEN                   3221225472         0xC0000000       
+ * 0x0235[43:0]  MXAXB_NUM                   1122865512448      0x10570000000    
+ * 0x023B[31:0]  MXAXB_DEN                   4026531840         0xF0000000       
  * 0x0247[23:0]  R0A_REG                     0                  0x000000         
  * 0x024A[23:0]  R0_REG                      0                  0x000000         
  * 0x024D[23:0]  R1_REG                      0                  0x000000         
@@ -1188,8 +1262,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x028F[4:0]   OOF1_CLR_THR_EXT            0                  0x00             
  * 0x0290[4:0]   OOF2_CLR_THR_EXT            0                  0x00             
  * 0x0291[4:0]   OOF3_CLR_THR_EXT            0                  0x00             
- * 0x0292[3:0]   OOF_STOP_ON_LOS             15                 0xF              
- * 0x0293[3:0]   OOF_CLEAR_ON_LOS            15                 0xF              
+ * 0x0292[3:0]   OOF_STOP_ON_LOS             11                 0xB              
+ * 0x0293[3:0]   OOF_CLEAR_ON_LOS            11                 0xB              
  * 0x0294[7:4]   FASTLOCK_EXTEND_SCL         11                 0xB              
  * 0x0296[1]     LOL_SLW_VALWIN_SELX         1                  0x1              
  * 0x0297[1]     FASTLOCK_DLY_ONSW_EN        1                  0x1              
@@ -1198,8 +1272,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x02A9[19:0]  FASTLOCK_DLY_ONSW           1228               0x004CC          
  * 0x02B7[3:2]   LOL_NOSIG_TIME              3                  0x3              
  * 0x02BC[7:6]   LOS_CMOS_MIN_PER_EN         0                  0x0              
- * 0x0302[43:0]  N0_NUM                      47244640256        0x00B00000000    
- * 0x0308[31:0]  N0_DEN                      2147483648         0x80000000       
+ * 0x0302[43:0]  N0_NUM                      70179094528        0x01057000000    
+ * 0x0308[31:0]  N0_DEN                      3355443200         0xC8000000       
  * 0x030C[0]     N0_UPDATE                   0                  0x0              
  * 0x030D[43:0]  N1_NUM                      0                  0x00000000000    
  * 0x0313[31:0]  N1_DEN                      0                  0x00000000       
@@ -1214,8 +1288,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0334[31:0]  N4_DEN                      0                  0x00000000       
  * 0x0338[0]     N4_UPDATE                   0                  0x0              
  * 0x0338[1]     N_UPDATE                    0                  0x0              
- * 0x0339[4:0]   N_FSTEP_MSK                 31                 0x1F             
- * 0x033B[43:0]  N0_FSTEPW                   0                  0x00000000000    
+ * 0x0339[4:0]   N_FSTEP_MSK                 30                 0x1E             
+ * 0x033B[43:0]  N0_FSTEPW                   7018               0x00000001B6A    
  * 0x0341[43:0]  N1_FSTEPW                   0                  0x00000000000    
  * 0x0347[43:0]  N2_FSTEPW                   0                  0x00000000000    
  * 0x034D[43:0]  N3_FSTEPW                   0                  0x00000000000    
@@ -1228,25 +1302,25 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0487[0]     ZDM_EN                      0                  0x0              
  * 0x0487[2:1]   ZDM_IN_SEL                  0                  0x0              
  * 0x0487[4]     ZDM_AUTOSW_EN               0                  0x0              
- * 0x0508[5:0]   BW0_PLL                     19                 0x13             
- * 0x0509[5:0]   BW1_PLL                     34                 0x22             
+ * 0x0508[5:0]   BW0_PLL                     20                 0x14             
+ * 0x0509[5:0]   BW1_PLL                     35                 0x23             
  * 0x050A[5:0]   BW2_PLL                     12                 0x0C             
  * 0x050B[5:0]   BW3_PLL                     11                 0x0B             
- * 0x050C[5:0]   BW4_PLL                     7                  0x07             
+ * 0x050C[5:0]   BW4_PLL                     31                 0x1F             
  * 0x050D[5:0]   BW5_PLL                     63                 0x3F             
- * 0x050E[5:0]   FASTLOCK_BW0_PLL            22                 0x16             
- * 0x050F[5:0]   FASTLOCK_BW1_PLL            42                 0x2A             
+ * 0x050E[5:0]   FASTLOCK_BW0_PLL            23                 0x17             
+ * 0x050F[5:0]   FASTLOCK_BW1_PLL            43                 0x2B             
  * 0x0510[5:0]   FASTLOCK_BW2_PLL            9                  0x09             
  * 0x0511[5:0]   FASTLOCK_BW3_PLL            8                  0x08             
- * 0x0512[5:0]   FASTLOCK_BW4_PLL            7                  0x07             
+ * 0x0512[5:0]   FASTLOCK_BW4_PLL            31                 0x1F             
  * 0x0513[5:0]   FASTLOCK_BW5_PLL            63                 0x3F             
- * 0x0515[55:0]  M_NUM                       3023656976384      0x0002C000000000 
+ * 0x0515[55:0]  M_NUM                       17965848199168     0x00105700000000 
  * 0x051C[31:0]  M_DEN                       2147483648         0x80000000       
  * 0x0521[3:0]   M_FRAC_MODE                 11                 0xB              
  * 0x0521[4]     M_FRAC_EN                   0                  0x0              
  * 0x0521[5]     PLL_OUT_RATE_SEL            1                  0x1              
  * 0x052A[0]     IN_SEL_REGCTRL              1                  0x1              
- * 0x052A[3:1]   IN_SEL                      0                  0x0              
+ * 0x052A[3:1]   IN_SEL                      2                  0x2              
  * 0x052B[0]     FASTLOCK_AUTO_EN            1                  0x1              
  * 0x052B[1]     FASTLOCK_MAN                0                  0x0              
  * 0x052C[0]     HOLD_EN                     1                  0x1              
@@ -1257,7 +1331,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x052E[4:0]   HOLD_HIST_LEN               25                 0x19             
  * 0x052F[4:0]   HOLD_HIST_DELAY             25                 0x19             
  * 0x0531[4:0]   HOLD_REF_COUNT_FRC          0                  0x00             
- * 0x0532[23:0]  HOLD_15M_CYC_COUNT          834                0x000342         
+ * 0x0532[23:0]  HOLD_15M_CYC_COUNT          5209               0x001459         
  * 0x0535[0]     FORCE_HOLD                  0                  0x0              
  * 0x0536[1:0]   CLK_SWITCH_MODE             0                  0x0              
  * 0x0536[2]     HSW_EN                      0                  0x0              
@@ -1272,9 +1346,9 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x053B[9:0]   HSW_PHMEAS_THR              3                  0x003            
  * 0x053D[4:0]   HSW_COARSE_PM_LEN           4                  0x04             
  * 0x053E[4:0]   HSW_COARSE_PM_DLY           2                  0x02             
- * 0x0588[3:0]   HSW_FINE_PM_LEN             6                  0x6              
- * 0x0589[12:0]  CAP_SHORT_DELAY             13                 0x000D           
- * 0x058B[19:0]  HSW_MEAS_SETTLE             23917              0x05D6D          
+ * 0x0588[3:0]   HSW_FINE_PM_LEN             9                  0x9              
+ * 0x0589[12:0]  CAP_SHORT_DELAY             81                 0x0051           
+ * 0x058B[19:0]  HSW_MEAS_SETTLE             2559               0x009FF          
  * 0x059B[1]     INIT_LP_CLOSE_HO            0                  0x0              
  * 0x059B[4]     HOLD_PRESERVE_HIST          0                  0x0              
  * 0x059B[5]     HOLD_FRZ_WITH_INTONLY       1                  0x1              
@@ -1282,11 +1356,11 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x059B[7]     HOLDEXIT_STD_BO             0                  0x0              
  * 0x059C[6]     HOLDEXIT_ST_BO              0                  0x0              
  * 0x059C[7]     HOLD_RAMPBP_NOHIST          1                  0x1              
- * 0x059D[5:0]   HOLDEXIT_BW0                19                 0x13             
- * 0x059E[5:0]   HOLDEXIT_BW1                36                 0x24             
+ * 0x059D[5:0]   HOLDEXIT_BW0                20                 0x14             
+ * 0x059E[5:0]   HOLDEXIT_BW1                37                 0x25             
  * 0x059F[5:0]   HOLDEXIT_BW2                12                 0x0C             
  * 0x05A0[5:0]   HOLDEXIT_BW3                11                 0x0B             
- * 0x05A1[5:0]   HOLDEXIT_BW4                7                  0x07             
+ * 0x05A1[5:0]   HOLDEXIT_BW4                31                 0x1F             
  * 0x05A2[5:0]   HOLDEXIT_BW5                63                 0x3F             
  * 0x05A4[7:0]   HSW_LIMIT                   8                  0x08             
  * 0x05A5[0]     HSW_LIMIT_ACTION            0                  0x0              
@@ -1294,8 +1368,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x05A6[3]     RAMP_SWITCH_EN              0                  0x0              
  * 0x05AC[0]     OUT_MAX_LIMIT_EN            1                  0x1              
  * 0x05AC[3]     HOLD_SETTLE_DET_EN          1                  0x1              
- * 0x05AD[15:0]  OUT_MAX_LIMIT_LMT           19223              0x4B17           
- * 0x05B1[15:0]  HOLD_SETTLE_TARGET          787                0x0313           
+ * 0x05AD[15:0]  OUT_MAX_LIMIT_LMT           18275              0x4763           
+ * 0x05B1[15:0]  HOLD_SETTLE_TARGET          748                0x02EC           
  * 0x0802[15:0]  FIXREGSA0                   1333               0x0535           
  * 0x0804[7:0]   FIXREGSD0                   0                  0x00             
  * 0x0805[15:0]  FIXREGSA1                   0                  0x0000           
@@ -1362,15 +1436,15 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0861[7:0]   FIXREGSD31                  0                  0x00             
  * 0x090E[0]     XAXB_EXTCLK_EN              0                  0x0              
  * 0x0943[0]     IO_VDD_SEL                  1                  0x1              
- * 0x0949[3:0]   IN_EN                       1                  0x1              
+ * 0x0949[3:0]   IN_EN                       4                  0x4              
  * 0x0949[7:4]   IN_PULSED_CMOS_EN           0                  0x0              
- * 0x094A[3:0]   INX_TO_PFD_EN               1                  0x1              
+ * 0x094A[3:0]   INX_TO_PFD_EN               4                  0x4              
  * 0x094E[11:0]  REFCLK_HYS_SEL              585                0x249            
  * 0x094F[7:4]   IN_CMOS_USE1P8              15                 0xF              
  * 0x095E[0]     MXAXB_INTEGER               0                  0x0              
  * 0x0A02[4:0]   N_ADD_0P5                   0                  0x00             
  * 0x0A03[4:0]   N_CLK_TO_OUTX_EN            1                  0x01             
- * 0x0A04[4:0]   N_PIBYP                     1                  0x01             
+ * 0x0A04[4:0]   N_PIBYP                     0                  0x00             
  * 0x0A05[4:0]   N_PDNB                      1                  0x01             
  * 0x0A14[3]     N0_HIGH_FREQ                0                  0x0              
  * 0x0A1A[3]     N1_HIGH_FREQ                0                  0x0              
@@ -1410,13 +1484,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0B44[3:0]   PDIV_FRACN_CLK_DIS          15                 0xF              
  * 0x0B44[5]     FRACN_CLK_DIS_PLL           1                  0x1              
  * 0x0B46[3:0]   LOS_CLK_DIS                 0                  0x0              
- * 0x0B47[4:0]   OOF_CLK_DIS                 14                 0x0E             
- * 0x0B48[4:0]   OOF_DIV_CLK_DIS             14                 0x0E             
+ * 0x0B47[4:0]   OOF_CLK_DIS                 11                 0x0B             
+ * 0x0B48[4:0]   OOF_DIV_CLK_DIS             11                 0x0B             
  * 0x0B4A[4:0]   N_CLK_DIS                   30                 0x1E             
  * 0x0B57[11:0]  VCO_RESET_CALCODE           270                0x10E            
  * 0x0C02[2:0]   VAL_DIV_CTL0                3                  0x3              
  * 0x0C02[4]     VAL_DIV_CTL1                0                  0x0              
- * 0x0C03[3:0]   IN_CLK_VAL_PWR_UP_DIS       1                  0x1              
+ * 0x0C03[3:0]   IN_CLK_VAL_PWR_UP_DIS       4                  0x4              
  * 0x0C07[0]     IN_CLK_VAL_EN               1                  0x1              
  * 0x0C08[7:0]   IN_CLK_VAL_TIME             1                  0x01
  * 
