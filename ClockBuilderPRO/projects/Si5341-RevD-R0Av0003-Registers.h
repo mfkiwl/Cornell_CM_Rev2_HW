@@ -10,7 +10,7 @@
  * Design ID:                                          R0Av0003
  * Includes Pre/Post Download Control Register Writes: Yes
  * Created By:                                         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:                                          2021-12-07 06:57:26 GMT-05:00
+ * Timestamp:                                          2021-12-07 16:24:36 GMT-05:00
  *
  * A complete design report corresponding to this export is included at the end 
  * of this header file.
@@ -269,8 +269,8 @@ si5341_revd_register_t const si5341_revd_registers[SI5341_REVD_REG_CONFIG_NUM_RE
 	{ 0x0337, 0x00 },
 	{ 0x0338, 0x00 },
 	{ 0x0339, 0x1E },
-	{ 0x033B, 0x33 },
-	{ 0x033C, 0x72 },
+	{ 0x033B, 0xF6 },
+	{ 0x033C, 0x15 },
 	{ 0x033D, 0x00 },
 	{ 0x033E, 0x00 },
 	{ 0x033F, 0x00 },
@@ -445,7 +445,7 @@ si5341_revd_register_t const si5341_revd_registers[SI5341_REVD_REG_CONFIG_NUM_RE
  * Project File:       D:\6089-119_CM_2xVU13P\GitHub\Cornell_CM_Rev2_HW\ClockBuilderPRO\projects\Si5341-RevD-R0Av0003-Project.slabtimeproj
  * Design ID:          R0Av0003
  * Created By:         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:          2021-12-07 06:57:25 GMT-05:00
+ * Timestamp:          2021-12-07 16:24:36 GMT-05:00
  * 
  * Design Notes
  * ============
@@ -563,18 +563,18 @@ si5341_revd_register_t const si5341_revd_registers[SI5341_REVD_REG_CONFIG_NUM_RE
  *    Fvco:               13.404 GHz
  *    N0_NUM:             224881803264
  *    N0_DEN:             2684354560
- *    N0_FSTEPW:          29235
+ *    N0_FSTEPW:          5622
  * 
- *    Desired Step Size:  0.13 ppm
- *    Actual Step Size:   0.130001642535... ppm
- *    Range:              15 ppm
+ *    Desired Step Size:  25 ppb
+ *    Actual Step Size:   24.999800157013... ppb
+ *    Range:              25 ppm
  * 
  *    OUT8
  *         R8:            4
  *         Initial Freq:  40 MHz
- *         Step Size:     5.200065701408... Hz
- *         Min Freq:      39.999402001462... MHz
- *         Max Freq:      40.000598016418... MHz
+ *         Step Size:     0.99999200628... Hz
+ *         Min Freq:      39.999001032959... MHz
+ *         Max Freq:      40.000999016939... MHz
  * 
  * N1: DCO Disabled
  * 
@@ -837,7 +837,7 @@ si5341_revd_register_t const si5341_revd_registers[SI5341_REVD_REG_CONFIG_NUM_RE
  * 0x0338[0]     N4_UPDATE            0                  0x0              
  * 0x0338[1]     N_UPDATE             0                  0x0              
  * 0x0339[4:0]   N_FSTEP_MSK          30                 0x1E             
- * 0x033B[43:0]  N0_FSTEPW            29235              0x00000007233    
+ * 0x033B[43:0]  N0_FSTEPW            5622               0x000000015F6    
  * 0x0341[43:0]  N1_FSTEPW            0                  0x00000000000    
  * 0x0347[43:0]  N2_FSTEPW            0                  0x00000000000    
  * 0x034D[43:0]  N3_FSTEPW            0                  0x00000000000    
