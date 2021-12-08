@@ -141,8 +141,10 @@ print(get_command("i2crr "+i2c_port+" 0x21 0x06 1"))
 # Setting Control Registers at 0x20 on U88 (TCA9555) to have outputs on P07, P03..P00, P15..P12, and P10 (set '0' for outputs)
 print(get_command("i2cwr "+i2c_port+" 0x20 0x06 1 0x70")) # 0b01110000
 print(get_command("i2cwr "+i2c_port+" 0x20 0x07 1 0xc2")) # 0b11000010
-# Setting U88 outputs on P07 and P10 to '1' to negate active-lo reset signals. All others to '0'
-print(get_command("i2cwr "+i2c_port+" 0x20 0x02 1 80")) #0b10000000
+# Setting U88 outputs on P07 and P10 to '1' to negate active-lo reset signals.
+# Also setting P03..P00 to '1' to use synth R0B to drive the R0 RefClks to the FPGA#1
+# All others to '0'
+print(get_command("i2cwr "+i2c_port+" 0x20 0x02 1 8f")) #0b10001111
 print(get_command("i2cwr "+i2c_port+" 0x20 0x03 1 01")) #0b00000001
 
 # enable only the route through the I2C mux to the selected synth
