@@ -162,7 +162,7 @@ while True:
                    indx += 1
 
 # send commands off to synthesizer
-pdb.set_trace()
+#pdb.set_trace()
 # figure out how many steps are needed
 if step_units == span_units :
     # both have the same units
@@ -171,6 +171,7 @@ elif step_units == "ppb" and span_units == "ppm" :
     # multiply by 1000
     num_steps_scale = 1000.0
 num_steps = int(num_steps_scale * float(span)/float(step_size))
+print("Calculated "+str(num_steps)+" steps specified.")
 
 # set the initial direction. "both" or "cont" will always start with a decrement
 direction_mask = "2"
