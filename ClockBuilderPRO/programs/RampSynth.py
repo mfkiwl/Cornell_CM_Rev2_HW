@@ -184,7 +184,7 @@ while True :
         step +=1
         write_control(ChangePage, direction_mask, not args.quiet)
         ChangePage = 0
-        time.sleep(1)
+        print("step = "+str(step))
     # all steps have been sent to the hardware
     if args.direction == "up" :
         break
