@@ -10,7 +10,7 @@
  * Design ID:                                          R1Cv0002
  * Includes Pre/Post Download Control Register Writes: Yes
  * Created By:                                         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:                                          2021-12-14 14:27:48 GMT-05:00
+ * Timestamp:                                          2021-12-14 14:40:50 GMT-05:00
  *
  * A complete design report corresponding to this export is included at the end 
  * of this header file.
@@ -100,9 +100,9 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0057, 0x00 },
 	{ 0x0058, 0x00 },
 	{ 0x0059, 0x01 },
-	{ 0x005A, 0x00 },
-	{ 0x005B, 0x00 },
-	{ 0x005C, 0xD0 },
+	{ 0x005A, 0x55 },
+	{ 0x005B, 0x55 },
+	{ 0x005C, 0xD5 },
 	{ 0x005D, 0x00 },
 	{ 0x005E, 0x00 },
 	{ 0x005F, 0x00 },
@@ -127,7 +127,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x009E, 0x40 },
 	{ 0x00A0, 0x20 },
 	{ 0x00A2, 0x00 },
-	{ 0x00A9, 0xA0 },
+	{ 0x00A9, 0xAD },
 	{ 0x00AA, 0x61 },
 	{ 0x00AB, 0x00 },
 	{ 0x00AC, 0x00 },
@@ -238,12 +238,12 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x0236, 0x00 },
 	{ 0x0237, 0x00 },
 	{ 0x0238, 0x00 },
-	{ 0x0239, 0x8F },
+	{ 0x0239, 0xDC },
 	{ 0x023A, 0x00 },
 	{ 0x023B, 0x00 },
 	{ 0x023C, 0x00 },
 	{ 0x023D, 0x00 },
-	{ 0x023E, 0x80 },
+	{ 0x023E, 0xC0 },
 	{ 0x0247, 0x00 },
 	{ 0x0248, 0x00 },
 	{ 0x0249, 0x00 },
@@ -438,7 +438,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x052E, 0x19 },
 	{ 0x052F, 0x19 },
 	{ 0x0531, 0x00 },
-	{ 0x0532, 0x57 },
+	{ 0x0532, 0x42 },
 	{ 0x0533, 0x03 },
 	{ 0x0534, 0x00 },
 	{ 0x0535, 0x00 },
@@ -451,11 +451,11 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x053C, 0x00 },
 	{ 0x053D, 0x04 },
 	{ 0x053E, 0x02 },
-	{ 0x0588, 0x07 },
+	{ 0x0588, 0x06 },
 	{ 0x0589, 0x0D },
 	{ 0x058A, 0x00 },
-	{ 0x058B, 0x8A },
-	{ 0x058C, 0x5A },
+	{ 0x058B, 0x6D },
+	{ 0x058C, 0x5D },
 	{ 0x058D, 0x00 },
 	{ 0x059B, 0x78 },
 	{ 0x059C, 0x8C },
@@ -469,10 +469,10 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
 	{ 0x05A5, 0x00 },
 	{ 0x05A6, 0x03 },
 	{ 0x05AC, 0x09 },
-	{ 0x05AD, 0x37 },
-	{ 0x05AE, 0x49 },
-	{ 0x05B1, 0xFF },
-	{ 0x05B2, 0x02 },
+	{ 0x05AD, 0x17 },
+	{ 0x05AE, 0x4B },
+	{ 0x05B1, 0x13 },
+	{ 0x05B2, 0x03 },
 	{ 0x0802, 0x35 },
 	{ 0x0803, 0x05 },
 	{ 0x0804, 0x00 },
@@ -652,13 +652,13 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Project File:       D:\6089-119_CM_2xVU13P\GitHub\Cornell_CM_Rev2_HW\ClockBuilderPRO\projects\Si5395-RevA-R1Cv0002-Project.slabtimeproj
  * Design ID:          R1Cv0002
  * Created By:         ClockBuilder Pro v4.1 [2021-09-22]
- * Timestamp:          2021-12-14 14:27:47 GMT-05:00
+ * Timestamp:          2021-12-14 14:40:50 GMT-05:00
  * 
  * Design Notes
  * ============
  * Synthesizer R1C for Apollo CMv2, 6089-119-RevA, schematic sheet 2.11
  * v0001: Use 48 MHz crystal for 322.265625 MHz output
- * v0002: Use 312 MHz on IN0 for 312 MHz output
+ * v0002: Use 320 MHz on IN0 for 320 MHz output
  * 
  * Design Rule Check
  * =================
@@ -670,7 +670,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Device Grade
  * ============
- * Maximum Output Frequency: 312 MHz
+ * Maximum Output Frequency: 320 MHz
  * Frequency Synthesis Mode: Integer
  * Frequency Plan Grade:     D
  * Minimum Base OPN:         Si5395D*
@@ -700,7 +700,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  *    48 MHz (XTAL - Crystal)
  * 
  * Inputs:
- *     IN0: 312 MHz
+ *     IN0: 320 MHz
  *          Standard Differential and Single-ended
  *     IN1: Unused
  *     IN2: Unused
@@ -708,35 +708,35 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Outputs:
  *   OUT0A: Unused
- *    OUT0: 312 MHz
+ *    OUT0: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT1: 312 MHz
+ *    OUT1: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT2: 312 MHz
+ *    OUT2: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT3: 312 MHz
+ *    OUT3: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT4: 312 MHz
+ *    OUT4: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT5: 312 MHz
+ *    OUT5: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT6: 312 MHz
+ *    OUT6: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT7: 312 MHz
+ *    OUT7: 320 MHz
  *          Enabled, LVDS 1.8 V
- *    OUT8: 312 MHz
+ *    OUT8: 320 MHz
  *          Enabled, LVDS 1.8 V
  *    OUT9: Unused
- *   OUT9A: 312 MHz
+ *   OUT9A: 320 MHz
  *          Enabled, LVDS 1.8 V
  * 
  * Frequency Plan
  * ==============
  * Priority: maximize the number of low jitter outputs
  * 
- * Fvco = 13.728 GHz
- * Fpfd = 1.95 MHz
- * Fms0 = 624 MHz
+ * Fvco = 14.08 GHz
+ * Fpfd = 2 MHz
+ * Fms0 = 640 MHz
  * 
  * P dividers:
  *    P0  = 160
@@ -745,21 +745,21 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  *    P3  = Unused
  *    Pxaxb = 1
  * 
- * MXAXB = 286
+ * MXAXB = 293.3333333333333333... [ 293 + 1/3 ]
  * M = 1408
  * N dividers:
  *    N0:
  *       Value: 22
- *       OUT0: 312 MHz
- *       OUT1: 312 MHz
- *       OUT2: 312 MHz
- *       OUT3: 312 MHz
- *       OUT4: 312 MHz
- *       OUT5: 312 MHz
- *       OUT6: 312 MHz
- *       OUT7: 312 MHz
- *       OUT8: 312 MHz
- *       OUT9A: 312 MHz
+ *       OUT0: 320 MHz
+ *       OUT1: 320 MHz
+ *       OUT2: 320 MHz
+ *       OUT3: 320 MHz
+ *       OUT4: 320 MHz
+ *       OUT5: 320 MHz
+ *       OUT6: 320 MHz
+ *       OUT7: 320 MHz
+ *       OUT8: 320 MHz
+ *       OUT9A: 320 MHz
  *    N1:
  *       Unused
  *    N2:
@@ -785,7 +785,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 
  * Nominal Bandwidth:
  *   Desired: 100.000 Hz
- *   Actual:  84.128 Hz
+ *   Actual:  83.620 Hz
  *   Coefficients:
  *      BW0:  19
  *      BW1:  34
@@ -795,7 +795,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  *      BW5:  63
  * Fastlock Bandwidth:
  *   Desired: 1.000 kHz
- *   Actual:  673.690 Hz
+ *   Actual:  669.599 Hz
  *   Coefficients:
  *      BW0:  22
  *      BW1:  42
@@ -830,16 +830,16 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * =========================
  * N0: 22
  * 
- *    OUT0  312 MHz
- *    OUT1  312 MHz
- *    OUT2  312 MHz
- *    OUT3  312 MHz
- *    OUT4  312 MHz
- *    OUT5  312 MHz
- *    OUT6  312 MHz
- *    OUT7  312 MHz
- *    OUT8  312 MHz
- *    OUT9A 312 MHz
+ *    OUT0  320 MHz
+ *    OUT1  320 MHz
+ *    OUT2  320 MHz
+ *    OUT3  320 MHz
+ *    OUT4  320 MHz
+ *    OUT5  320 MHz
+ *    OUT6  320 MHz
+ *    OUT7  320 MHz
+ *    OUT8  320 MHz
+ *    OUT9A 320 MHz
  * 
  *    Desired Dynamic Skew Step:  ±0.000 ps
  *    Actual Dynamic Skew Step:   ±0 ps
@@ -866,26 +866,26 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * Theta-JA: 18.3 °C/W
  * Airflow:  2 m/s
  * 
- * Total Power: 908 mW, On Chip Power: 848 mW, Tj: 41 °C
+ * Total Power: 910 mW, On Chip Power: 850 mW, Tj: 41 °C
  * 
  *         Frequency  Format   Voltage   Current     Power
  *         ---------  ------  --------  --------  --------
- * VDD                           1.8 V  130.1 mA    234 mW
+ * VDD                           1.8 V  130.6 mA    235 mW
  * VDDA                          3.3 V  114.8 mA    379 mW
  * VDDO0A     Unused                                      
- * VDDO0     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO1     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO2     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO3     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO4     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO5     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO6     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO7     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
- * VDDO8     312 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO0     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO1     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO2     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO3     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO4     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO5     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO6     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO7     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO8     320 MHz  LVDS       1.8 V   16.4 mA     30 mW
  * VDDO9      Unused                                      
- * VDDO9A    312 MHz  LVDS       1.8 V   16.4 mA     30 mW
+ * VDDO9A    320 MHz  LVDS       1.8 V   16.4 mA     30 mW
  *                                      --------  --------
- *                               Total  408.9 mA    908 mW
+ *                               Total  409.7 mA    910 mW
  * 
  * Note:
  * 
@@ -960,7 +960,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0059[3:2]   FAST_OOF1_DETWIN_SEL        0                  0x0              
  * 0x0059[5:4]   FAST_OOF2_DETWIN_SEL        0                  0x0              
  * 0x0059[7:6]   FAST_OOF3_DETWIN_SEL        0                  0x0              
- * 0x005A[25:0]  OOF0_RATIO_REF              13631488           0x0D00000        
+ * 0x005A[25:0]  OOF0_RATIO_REF              13981013           0x0D55555        
  * 0x005E[25:0]  OOF1_RATIO_REF              0                  0x0000000        
  * 0x0062[25:0]  OOF2_RATIO_REF              0                  0x0000000        
  * 0x0066[25:0]  OOF3_RATIO_REF              0                  0x0000000        
@@ -975,7 +975,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x009E[7:4]   LOL_SLW_SET_THR             4                  0x4              
  * 0x00A0[7:4]   LOL_SLW_CLR_THR             2                  0x2              
  * 0x00A2[1]     LOL_TIMER_EN                0                  0x0              
- * 0x00A9[28:0]  LOL_CLR_DELAY_DIV256        24992              0x000061A0       
+ * 0x00A9[28:0]  LOL_CLR_DELAY_DIV256        25005              0x000061AD       
  * 0x00E5[0]     FASTLOCK_EXTEND_MASTER_DIS  0                  0x0              
  * 0x00E5[5]     FASTLOCK_EXTEND_EN          0                  0x0              
  * 0x00EA[28:0]  FASTLOCK_EXTEND             24586              0x0000600A       
@@ -1160,8 +1160,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x0233[4]     P2_FRACN_EN                 0                  0x0              
  * 0x0234[3:0]   P3_FRACN_MODE               11                 0xB              
  * 0x0234[4]     P3_FRACN_EN                 0                  0x0              
- * 0x0235[43:0]  MXAXB_NUM                   614180323328       0x08F00000000    
- * 0x023B[31:0]  MXAXB_DEN                   2147483648         0x80000000       
+ * 0x0235[43:0]  MXAXB_NUM                   944892805120       0x0DC00000000    
+ * 0x023B[31:0]  MXAXB_DEN                   3221225472         0xC0000000       
  * 0x0247[23:0]  R0A_REG                     0                  0x000000         
  * 0x024A[23:0]  R0_REG                      0                  0x000000         
  * 0x024D[23:0]  R1_REG                      0                  0x000000         
@@ -1259,7 +1259,7 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x052E[4:0]   HOLD_HIST_LEN               25                 0x19             
  * 0x052F[4:0]   HOLD_HIST_DELAY             25                 0x19             
  * 0x0531[4:0]   HOLD_REF_COUNT_FRC          0                  0x00             
- * 0x0532[23:0]  HOLD_15M_CYC_COUNT          855                0x000357         
+ * 0x0532[23:0]  HOLD_15M_CYC_COUNT          834                0x000342         
  * 0x0535[0]     FORCE_HOLD                  0                  0x0              
  * 0x0536[1:0]   CLK_SWITCH_MODE             0                  0x0              
  * 0x0536[2]     HSW_EN                      1                  0x1              
@@ -1274,9 +1274,9 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x053B[9:0]   HSW_PHMEAS_THR              3                  0x003            
  * 0x053D[4:0]   HSW_COARSE_PM_LEN           4                  0x04             
  * 0x053E[4:0]   HSW_COARSE_PM_DLY           2                  0x02             
- * 0x0588[3:0]   HSW_FINE_PM_LEN             7                  0x7              
+ * 0x0588[3:0]   HSW_FINE_PM_LEN             6                  0x6              
  * 0x0589[12:0]  CAP_SHORT_DELAY             13                 0x000D           
- * 0x058B[19:0]  HSW_MEAS_SETTLE             23178              0x05A8A          
+ * 0x058B[19:0]  HSW_MEAS_SETTLE             23917              0x05D6D          
  * 0x059B[1]     INIT_LP_CLOSE_HO            0                  0x0              
  * 0x059B[4]     HOLD_PRESERVE_HIST          1                  0x1              
  * 0x059B[5]     HOLD_FRZ_WITH_INTONLY       1                  0x1              
@@ -1296,8 +1296,8 @@ si5395_reva_register_t const si5395_reva_registers[SI5395_REVA_REG_CONFIG_NUM_RE
  * 0x05A6[3]     RAMP_SWITCH_EN              0                  0x0              
  * 0x05AC[0]     OUT_MAX_LIMIT_EN            1                  0x1              
  * 0x05AC[3]     HOLD_SETTLE_DET_EN          1                  0x1              
- * 0x05AD[15:0]  OUT_MAX_LIMIT_LMT           18743              0x4937           
- * 0x05B1[15:0]  HOLD_SETTLE_TARGET          767                0x02FF           
+ * 0x05AD[15:0]  OUT_MAX_LIMIT_LMT           19223              0x4B17           
+ * 0x05B1[15:0]  HOLD_SETTLE_TARGET          787                0x0313           
  * 0x0802[15:0]  FIXREGSA0                   1333               0x0535           
  * 0x0804[7:0]   FIXREGSD0                   0                  0x00             
  * 0x0805[15:0]  FIXREGSA1                   0                  0x0000           
