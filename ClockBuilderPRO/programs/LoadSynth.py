@@ -6,6 +6,7 @@ import io
 import argparse
 import os
 import pdb
+import re
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -61,6 +62,9 @@ serPort = "/dev/"+args.tty
 ser = serial.Serial(serPort,baudrate=115200,timeout=1)  # open serial port
 print(ser.portstr)         # check which port was really used
 
+ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+
+
 def get_command(command):
     lines = []
     # just ensure command has newline 
@@ -71,12 +75,26 @@ def get_command(command):
     ser.write(command.encode()) # write one char from an int
     done = False
     # wait for the MCU to send back a "%" prompt    
+    iters = 0
     while ( not done ):
         line  = ser.readline().rstrip()
-        if ( len(line) and chr(line[0]) == '%' ) :
-            done = True
+        line = ansi_escape.sub('', line)
+        if args.tty == "ttyUL1":
+            #if ( len(line) and line[0] == '%' ) :
+            if ( len(line) and '%' in line ) :
+                done = True
+            else :
+                lines.append(line.decode())
         else :
-            lines.append(line.decode())
+            if ( len(line) and chr(line[0]) == '%' ) :
+                done = True
+            else :
+                lines.append(line.decode())
+        iters = iters + 1
+        if ( iters > 10 ) :
+            #command = '\r\n'
+            print("stuck: ", line.decode(), iters)
+            ser.write(command.encode())
     return lines
 
 #write to ClockSynthesizer
@@ -111,13 +129,13 @@ def write_reg(ListOfRegs,ListOfDefs,Optimize,Noisy):
             HighByte = int(register[0][2:4],16)
             if ChangePage:
                 # write the new page number to address 0x01
-                command = "i2cwr "+i2c_port+" "+i2c_addr+" 0x01 1 "+register[0][0:4]+""
+                command = "i2cwr "+i2c_port+" "+i2c_addr+" 1 0x01 1 "+register[0][0:4]+""
                 if Noisy:
                     print(get_command(command))
                 else:
                     get_command(command)
             # write the register address and value
-            command = "i2cwr "+i2c_port+" "+i2c_addr+" 0x"+register[0][4:6]+" 1 "+register[1]+""
+            command = "i2cwr "+i2c_port+" "+i2c_addr+" 1 0x"+register[0][4:6]+" 1 "+register[1]+""
             if Noisy:
                 print(get_command(command))
             else:
@@ -125,27 +143,27 @@ def write_reg(ListOfRegs,ListOfDefs,Optimize,Noisy):
 
     #Set page back to 0 in the end
     if Noisy:
-        print(get_command("i2cwr "+i2c_port+" "+i2c_addr+" 0x01 1 0"))
+        print(get_command("i2cwr "+i2c_port+" "+i2c_addr+" 1 0x01 1 0"))
     else:
-        get_command("i2cwr "+i2c_port+" "+i2c_addr+" 0x01 1 0")
+        get_command("i2cwr "+i2c_port+" "+i2c_addr+" 1 0x01 1 0")
         
 # send 'help' command and print out results to show that the MCU is communicating
-print(get_command("help"))
+#print(get_command("help"))
 
 # eventually move the I2C register port setup elsewhere.
 # enable ports 6 and 7 on U84 at 0x70
 print(get_command("i2cw "+i2c_port+" 0x70 1 0xc0"))
 # Ping the registers at 0x20 and 0x21 to make sure they are indeed enabled
-print(get_command("i2crr "+i2c_port+" 0x20 0x06 1"))
-print(get_command("i2crr "+i2c_port+" 0x21 0x06 1"))
+print(get_command("i2crr "+i2c_port+" 0x20 1 0x06 1"))
+print(get_command("i2crr "+i2c_port+" 0x21 1 0x06 1"))
 # Setting Control Registers at 0x20 on U88 (TCA9555) to have outputs on P07, P03..P00, P15..P12, and P10 (set '0' for outputs)
-print(get_command("i2cwr "+i2c_port+" 0x20 0x06 1 0x70")) # 0b01110000
-print(get_command("i2cwr "+i2c_port+" 0x20 0x07 1 0xc2")) # 0b11000010
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x06 1 0x70")) # 0b01110000
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x07 1 0xc2")) # 0b11000010
 # Setting U88 outputs on P07 and P10 to '1' to negate active-lo reset signals.
 # Also setting P03..P00 to '1' to use synth R0B to drive the R0 RefClks to the FPGA#1
 # All others to '0'
-print(get_command("i2cwr "+i2c_port+" 0x20 0x02 1 8f")) #0b10001111
-print(get_command("i2cwr "+i2c_port+" 0x20 0x03 1 01")) #0b00000001
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 8f")) #0b10001111
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x03 1 01")) #0b00000001
 
 # enable only the route through the I2C mux to the selected synth
 print(get_command("i2cw "+i2c_port+" 0x70 1 "+i2c_mux_mask+""))
@@ -155,7 +173,7 @@ print(get_command("i2cr "+i2c_port+" "+i2c_addr+"  1"))
 
 #pdb.set_trace()
 # open files and create/initialize variables
-regfile=open(args.Reg_List, 'r', encoding='iso-8859-1')
+regfile=open(args.Reg_List, 'r')#, encoding='iso-8859-1')
 deffile=open(Def_List, 'r')
 PreambleList = []
 PostambleList = []
