@@ -168,9 +168,22 @@ def write_reg(ListOfRegs,ListOfDefs,Optimize,Noisy):
 # send 'help' command and print out results to show that the MCU is communicating
 #print(get_command("help"))
 
+# take semaphore 2
+# 
+semaphore = get_command("semaphore 2 take")
+print semaphore
+for line in semaphore:
+    if "failed to acquire semaphore" in line:
+        success = False
+        print(get_command("semaphore 2 release"))
+        while (not success):
+            semaphore = get_command("semaphore 2 take")
+            print semaphore
+            if not ("failed" in semaphore[:-1]):
+                success = True
+
 # eventually move the I2C register port setup elsewhere.
-# enable ports 6 and 7 on U84 at 0x70
-print(get_command("semaphore 2 take"))
+# enable ports 6 and 7 on U84 at 0x70   
 print(get_command("i2cw "+i2c_port+" 0x70 1 0xc0"))
 # Ping the registers at 0x20 and 0x21 to make sure they are indeed enabled
 print(get_command("i2crr "+i2c_port+" 0x20 1 0x06 1"))
