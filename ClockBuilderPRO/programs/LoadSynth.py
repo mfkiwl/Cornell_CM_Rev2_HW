@@ -24,7 +24,7 @@ parser.add_argument('--alpha', action="store_true", default=False, help='Enable 
 #o, a = parser.parse_args()
 
 args = parser.parse_args()
-
+i2c_active_map = ""
 # define variables for accessing each synth
 if args.synth_id == "r0a" :
     # SI5341 on mux channel 0 (mask = 0x01)
@@ -32,12 +32,14 @@ if args.synth_id == "r0a" :
     i2c_addr = "0x77"
     i2c_mux_mask = "0x01"
     Def_List = dir+"/../defaults/Si5341-RevD-default-Registers.h"
+    i2c_active_map = "0x80"
 elif args.synth_id == "r0b" :
     # SI5395 on mux channel 1 (mask = 0x02)
     i2c_port = "2"
     i2c_addr = "0x6b"
     i2c_mux_mask = "0x02"
     Def_List = dir+"/../defaults/Si5395-RevA-default-Registers.h"
+    i2c_active_map = "0x8f"
 elif args.synth_id == "r1a" :
     # SI5395 on mux channel 2 (mask = 0x04)
     i2c_port = "2"
@@ -160,9 +162,10 @@ print(get_command("i2crr "+i2c_port+" 0x21 1 0x06 1"))
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x06 1 0x70")) # 0b01110000
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x07 1 0xc2")) # 0b11000010
 # Setting U88 outputs on P07 and P10 to '1' to negate active-lo reset signals.
-# Also setting P03..P00 to '1' to use synth R0B to drive the R0 RefClks to the FPGA#1
+# Also setting P03..P00 to '0' or '1' to use synth R0A or R0B to drive the R0 RefClks to the FPGA#1
 # All others to '0'
-print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 8f")) #0b10001111
+#print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 8f")) #0b10001111
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 "+i2c_active_map))  #0x80 for r0a, 0x8f for r0b
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x03 1 01")) #0b00000001
 
 # enable only the route through the I2C mux to the selected synth
