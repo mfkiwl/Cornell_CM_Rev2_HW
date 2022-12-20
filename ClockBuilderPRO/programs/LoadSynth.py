@@ -18,13 +18,11 @@ parser.add_argument("synth_id", type=str.lower, choices=synth_choices, help='[re
 # the required register list filename has to be an exact match
 parser.add_argument("Reg_List", help='[required] Register List .h file from ClockBuilderPRO')
 parser.add_argument('--tty', default='ttyUSB0', help='Specify tty device. ttyUL1 for ZYNQ. ttyUSB0 or ttyUSB1 for CPU.')
-parser.add_argument('--debug', action="store_true", default=False, help='Print debug statements')
 parser.add_argument('--quiet', action="store_true", default=False, help='Do not print out get_command output')
-parser.add_argument('--alpha', action="store_true", default=False, help='Enable registers for FF alpha-2 parts')
 #o, a = parser.parse_args()
 
 args = parser.parse_args()
-
+i2c_active_map = "0x80"
 # define variables for accessing each synth
 if args.synth_id == "r0a" :
     # SI5341 on mux channel 0 (mask = 0x01)
@@ -32,12 +30,14 @@ if args.synth_id == "r0a" :
     i2c_addr = "0x77"
     i2c_mux_mask = "0x01"
     Def_List = dir+"/../defaults/Si5341-RevD-default-Registers.h"
+    i2c_active_map = "0x80"
 elif args.synth_id == "r0b" :
     # SI5395 on mux channel 1 (mask = 0x02)
     i2c_port = "2"
     i2c_addr = "0x6b"
     i2c_mux_mask = "0x02"
     Def_List = dir+"/../defaults/Si5395-RevA-default-Registers.h"
+    i2c_active_map = "0x8f"
 elif args.synth_id == "r1a" :
     # SI5395 on mux channel 2 (mask = 0x04)
     i2c_port = "2"
@@ -76,6 +76,7 @@ def get_command(command):
     done = False
     # wait for the MCU to send back a "%" prompt    
     iters = 0
+    trials = 0
     while ( not done ):
         line  = ser.readline().rstrip()
         line = ansi_escape.sub('', line)
@@ -91,10 +92,27 @@ def get_command(command):
             else :
                 lines.append(line.decode())
         iters = iters + 1
-        if ( iters > 10 ) :
+        if ( iters > 20 ) :
             #command = '\r\n'
             print("stuck: ", line.decode(), iters)
             ser.write(command.encode())
+            trials += 1
+    if trials > 0:
+        for trial in range(1,trials):
+            done = False
+            while ( not done ):
+                line  = ser.readline().rstrip()
+                line = ansi_escape.sub('', line)
+                if args.tty == "ttyUL1":
+                    if ( len(line) and '%' in line ) :
+                        done = True
+                    else :
+                        lines.append(line.decode())
+                else :
+                    if ( len(line) and chr(line[0]) == '%' ) :
+                        done = True
+                    else :
+                        lines.append(line.decode())
     return lines
 
 #write to ClockSynthesizer
@@ -150,8 +168,22 @@ def write_reg(ListOfRegs,ListOfDefs,Optimize,Noisy):
 # send 'help' command and print out results to show that the MCU is communicating
 #print(get_command("help"))
 
+# take semaphore 2
+# 
+semaphore = get_command("semaphore 2 take")
+print semaphore
+for line in semaphore:
+    if "failed to acquire semaphore" in line:
+        success = False
+        print(get_command("semaphore 2 release"))
+        while (not success):
+            semaphore = get_command("semaphore 2 take")
+            print semaphore
+            if not ("failed" in semaphore[:-1]):
+                success = True
+
 # eventually move the I2C register port setup elsewhere.
-# enable ports 6 and 7 on U84 at 0x70
+# enable ports 6 and 7 on U84 at 0x70   
 print(get_command("i2cw "+i2c_port+" 0x70 1 0xc0"))
 # Ping the registers at 0x20 and 0x21 to make sure they are indeed enabled
 print(get_command("i2crr "+i2c_port+" 0x20 1 0x06 1"))
@@ -160,9 +192,10 @@ print(get_command("i2crr "+i2c_port+" 0x21 1 0x06 1"))
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x06 1 0x70")) # 0b01110000
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x07 1 0xc2")) # 0b11000010
 # Setting U88 outputs on P07 and P10 to '1' to negate active-lo reset signals.
-# Also setting P03..P00 to '1' to use synth R0B to drive the R0 RefClks to the FPGA#1
+# Also setting P03..P00 to '0' or '1' to use synth R0A or R0B to drive the R0 RefClks to the FPGA#1
 # All others to '0'
-print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 8f")) #0b10001111
+#print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 8f")) #0b10001111
+print(get_command("i2cwr "+i2c_port+" 0x20 1 0x02 1 "+i2c_active_map))  #0x80 for r0a, 0x8f for r0b
 print(get_command("i2cwr "+i2c_port+" 0x20 1 0x03 1 01")) #0b00000001
 
 # enable only the route through the I2C mux to the selected synth
@@ -287,6 +320,7 @@ LoadClock(PreambleList, RegisterList, PostambleList, DefaultList, not args.quiet
 
 # disable all of the channels in the switch
 print(get_command("i2cw 2 0x70 1 0x00"))
+print(get_command("semaphore 2 release"))
 
 # close the tty port:
 ser.close()
