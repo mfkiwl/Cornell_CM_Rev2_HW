@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S001 (3827795) [11/11/2019]-[01/12/22]")
+  (SoftwareVersion "17.4-2019 S030 (4035538)  [6/11/2022]-[02/13/23]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -10,7 +10,7 @@
       (File ".\library2.olb"
         (Type "Schematic Library")
         (DisplayName ".\library2.olb")))
-    ("Allegro Netlist Directory" "allegro")
+    ("Allegro Netlist Directory" "allegro\allegro")
     (File ".\6089-119-revb.dsn"
       (Type "Schematic Design")
       (DisplayName ".\6089-119-revb.DSN"))
@@ -481,145 +481,41 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "D:\6089-119_CM_2xVU13P\Orcad\RevB\6089-119-revb.dsn")
+         "d:\6089-119_cm_2xvu13p\orcad\revb\6089-119-revb.dsn")
       (Path "Design Resources"
-         "D:\6089-119_CM_2xVU13P\Orcad\RevB\6089-119-revb.dsn" "SCHEMATIC1")
-      (Path "Design Resources"
-         "D:\6089-119_CM_2xVU13P\Orcad\RevB\6089-119-revb.dsn" "Design Cache")
+         "d:\6089-119_cm_2xvu13p\orcad\revb\6089-119-revb.dsn" "SCHEMATIC1")
       (Path "Design Resources" "Library")
       (Path "Design Resources" "Library"
-         "D:\6089-119_CM_2xVU13P\Orcad\RevB\library1.olb")
+         "d:\6089-119_cm_2xvu13p\orcad\revb\library1.olb")
       (Path "Layout")
       (Path "Outputs")
-      (Path "Logs")
-      (Select "Design Resources"
-         "D:\6089-119_CM_2xVU13P\Orcad\RevB\6089-119-revb.dsn"))
+      (Path "Logs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 911"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 539 0 829"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "-207 -3")
-        (Zoom "74")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1335 24 847")
+        (Scroll "-79 -3")
+        (Zoom "67")
         (Occurrence "/"))
       (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "2.03: MCU AND FPGA JTAG"))
+      (Page "10 1.10: DIA_EXT_CLOCKS"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 0 0 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1335 24 847")
+        (Scroll "-79 -3")
+        (Zoom "67")
         (Occurrence "/"))
       (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "5.04: F1_CONFIGURATION"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 0 0 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "4.03: I2C_CLOCK_CONTROL"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 287")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "4.01: I2C_CONTROLLER"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "5.03: F1_FPGA_POWER_GTY"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 60")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "3.04: PWR_F1_GTY_XCVR"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "3.06: PWR_F2_GTY_XCVR"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "-207 -3")
-        (Zoom "74")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "3.03: PWR_F1_INTERNAL"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 287")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "3.07: PWR_FFX12_XMIT"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "3.02: PWR_3V3 _ 1V8"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1709 24 929")
-        (Scroll "0 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "5.02: F1_FPGA_POWER_INTERNAL"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 0 0 5 1709 24 929")
-        (Scroll "0 30")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\6089-119_CM_2XVU13P\ORCAD\REVB\6089-119-REVB.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "6.03: F2_FPGA_POWER_GTY")))
+      (Page "11 1.11: TCDS_SIMPLIFIED")))
   (PartMRUSelector
     (CON20A
       (FullPartName "CON20A.Normal")
@@ -722,4 +618,5 @@
       (LibraryName "D:\6089-119_CM_2XVU13P\ORCAD\LIBRARY1.OLB")
       (DeviceIndex "0")))
   (LastUsedLibraryBrowseDirectory "C:\Cadence\SPB_17.4\tools\capture\library")
-  (ISPCBBASICLICENSE "false"))
+  (ISPCBBASICLICENSE "false")
+  (MPSSessionName "Charlie"))
